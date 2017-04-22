@@ -28,19 +28,31 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="./search.html">Search</a></li>
+                        <li><a href="./index.html">Home</a></li>
+                        <li class="active"><a href="#">Search</a></li>
 
                     </ul>
                 </div>
             </div>
         </nav>
+        <div class="row">
+            <div class="col-md-12">
+                <form id = "form">
+                  <div class="form-group">
+                    <label for="search">Book Name</label>
+                    <input type="text" class="form-control" id="search" placeholder="Book Name"><br>
+                     <button class="btn btn-default" id = "searchB">Search</button>
+                  </div>
+                </form>
+            </div>
+        </div>
 
         <div id="books">
 
         </div>
 
     </div>
+
 
 
     <div style="display:none" id="template">
@@ -63,7 +75,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="./scripts/client.js"></script>
+    <script src="./scripts/search.js"></script>
 </body>
 
 </html>

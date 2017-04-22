@@ -32,6 +32,29 @@ app.post("/book", function(req, res) {
         return book._id == bookId;
     }));
 });
+app.post("/bookSearch", function(req,res){
+    var bookName = req.body.bookName;
+    var booksFind = [];
+
+    books.forEach(function(book){
+        var name = book.name;
+        
+        if(name.indexOf(bookName) >= 0){
+            booksFind.push(book);
+        }
+
+    });
+
+    res.send(booksFind.map(function(book) {
+        return {
+            id: book._id,
+            name: book.name,
+            author: book.author,
+            picture: book.picture,
+            tags: book.tags
+        }
+    }));
+});
 
 app.listen(3000, function() {
     console.log("Server is running on http://localhost:3000");
