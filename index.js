@@ -32,13 +32,16 @@ app.post("/book", function(req, res) {
         return book._id == bookId;
     }));
 });
+app.get("/search", function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/search.html"));
+});
 app.post("/bookSearch", function(req,res){
     var bookName = req.body.bookName;
     var booksFind = [];
 
     books.forEach(function(book){
         var name = book.name;
-        
+
         if(name.indexOf(bookName) >= 0){
             booksFind.push(book);
         }
